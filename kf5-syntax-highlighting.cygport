@@ -1,0 +1,28 @@
+inherit kf5
+
+NAME="kf5-syntax-highlighting"
+VERSION=5.35.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 syntax highlighting engine"
+DESCRIPTION="This is a stand-alone implementation of the Kate syntax highlighting
+engine. It's meant as a building block for text editors as well as for simple
+highlighting text rendering (e.g. as HTML), supporting both integration with a
+custom editor as well as a ready-to-use QSyntaxHighlighter sub-class."
+
+PKG_NAMES="libKF5SyntaxHighlighting5 libKF5SyntaxHighlighting-devel"
+libKF5SyntaxHighlighting5_CONTENTS="
+	etc/xdg/org_kde_ksyntaxhighlighting.categories
+	usr/bin/cygKF5SyntaxHighlighting-5.dll
+	usr/bin/kate-syntax-highlighter.exe
+	usr/share/doc/${NAME}/
+	usr/share/locale/*/LC_MESSAGES/syntaxhighlighting5_qt.qm
+"
+libKF5SyntaxHighlighting_devel_REQUIRES="libQt5Gui-devel"
+libKF5SyntaxHighlighting_devel_CONTENTS="
+	usr/include/KF5/KSyntaxHighlighting/
+	usr/include/KF5/ksyntaxhighlighting_version.h
+	usr/lib/cmake/KF5SyntaxHighlighting/
+	usr/lib/libKF5SyntaxHighlighting.dll.a
+	usr/lib/qt5/mkspecs/modules/qt_KSyntaxHighlighting.pri
+"
